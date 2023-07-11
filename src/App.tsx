@@ -1,9 +1,13 @@
+import { Route, Routes } from 'react-router'
+import { Home } from './components/Home'
 import './App.css'
 
 function App() {
   return (
     <div>
-      <p>REFS</p>      
+      <Routes>
+        <Route path="/" element={<Home />}/>        
+      </Routes>    
     </div>
   )
 }
