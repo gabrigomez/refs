@@ -1,13 +1,14 @@
 import { Form, Field } from 'react-final-form'
+import { Books } from '../interfaces'
 
-export const Book = () => {
+export const Book = () => {  
   
-  const onSubmit = (...values: Array<any>) => {
-    console.log(values[0])
+  const onSubmit = (values: Books) => {
+    console.log(values)
   }
-  
+
   return (
-    <div className="bg-gray-700 rounded-md">
+    <div className="bg-slate-400 rounded-md">
       <div className='flex flex-col jus items-center'>
         <div className='mt-2'>
           <p>Book</p>
@@ -16,7 +17,7 @@ export const Book = () => {
           onSubmit={onSubmit}
           render={({ handleSubmit }) => (
             <form action="submit" onSubmit={handleSubmit}>
-              <Field name="autor">
+              <Field name="author">
                 {({ input, meta }) => (
                   <div className="flex flex-col my-3">
                     <input 
@@ -33,7 +34,7 @@ export const Book = () => {
                   </div>
                 )}
               </Field>
-              <Field name="titulo">
+              <Field name="title">
                 {({ input, meta }) => (
                   <div className="flex flex-col my-3">
                     <input 
@@ -50,7 +51,7 @@ export const Book = () => {
                   </div>
                 )}
               </Field>
-              <Field name="editora">
+              <Field name="publisher">
                 {({ input, meta }) => (
                   <div className="flex flex-col my-3">
                     <input 
@@ -67,7 +68,7 @@ export const Book = () => {
                   </div>
                 )}
               </Field>              
-              <Field name="ano">
+              <Field name="year">
                 {({ input, meta }) => (
                   <div className="flex flex-col my-3">
                     <input 
@@ -84,7 +85,7 @@ export const Book = () => {
                   </div>
                 )}
               </Field>              
-              <Field name="local">
+              <Field name="locale">
                 {({ input, meta }) => (
                   <div className="flex flex-col my-3">
                     <input 

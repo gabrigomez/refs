@@ -1,9 +1,10 @@
 import { Field, Form } from "react-final-form"
+import { Articles } from "../interfaces"
 
 export const Article = () => {
   
-  const onSubmit = (...values: Array<any>) => {
-    console.log(values[0])
+  const onSubmit = (values: Articles) => {
+    console.log(values)
   }
 
   return (
