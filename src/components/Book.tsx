@@ -1,7 +1,38 @@
 import { Form, Field } from 'react-final-form'
 import { Books } from '../interfaces'
 
-export const Book = () => {  
+export const Book = () => {
+  const validate = (values: Books) => {
+    const errors = {
+      author: false,
+      title: false,
+      publisher: false,
+      year: false,
+      locale: false,      
+    }
+    
+    if (!values.author) {
+      errors.author = true
+      return errors
+    }
+    if (!values.title) {
+      errors.title = true
+      return errors
+    }
+    if (!values.publisher) {
+      errors.publisher = true
+      return errors
+    }
+    if (!values.year) {
+      errors.year = true
+      return errors
+    }
+    if (!values.locale) {
+      errors.locale = true
+      return errors
+    }
+    
+  }
   
   const onSubmit = (values: Books) => {
     console.log(values)
@@ -15,6 +46,7 @@ export const Book = () => {
         </div>
         <Form
           onSubmit={onSubmit}
+          validate={validate}
           render={({ handleSubmit }) => (
             <form action="submit" onSubmit={handleSubmit}>
               <Field name="author">
@@ -24,7 +56,7 @@ export const Book = () => {
                       type="text"
                       {...input} 
                       placeholder="Autor" 
-                      className="p-2 rounded-md"
+                      className={`p-2 rounded-md ${meta.error && meta.touched ? 'border-2 border-red-500' : ''}`}
                       />
                     {meta.error && meta.touched && 
                       <span className="text-xs text-red-600 mt-1">
@@ -41,7 +73,7 @@ export const Book = () => {
                       type="text"
                       {...input} 
                       placeholder="Título" 
-                      className="p-2 rounded-md"
+                      className={`p-2 rounded-md ${meta.error && meta.touched ? 'border-2 border-red-500' : ''}`}
                       />
                     {meta.error && meta.touched && 
                       <span className="text-xs text-red-600 mt-1">
@@ -58,7 +90,7 @@ export const Book = () => {
                       type="text"
                       {...input} 
                       placeholder="Editora" 
-                      className="p-2 rounded-md"
+                      className={`p-2 rounded-md ${meta.error && meta.touched ? 'border-2 border-red-500' : ''}`}
                       />
                     {meta.error && meta.touched && 
                       <span className="text-xs text-red-600 mt-1">
@@ -75,7 +107,7 @@ export const Book = () => {
                       type="text"
                       {...input} 
                       placeholder="Ano" 
-                      className="p-2 rounded-md"
+                      className={`p-2 rounded-md ${meta.error && meta.touched ? 'border-2 border-red-500' : ''}`}
                       />
                     {meta.error && meta.touched && 
                       <span className="text-xs text-red-600 mt-1">
@@ -92,7 +124,7 @@ export const Book = () => {
                       type="text"
                       {...input} 
                       placeholder="Local" 
-                      className="p-2 rounded-md"
+                      className={`p-2 rounded-md ${meta.error && meta.touched ? 'border-2 border-red-500' : ''}`}
                       />
                     {meta.error && meta.touched && 
                       <span className="text-xs text-red-600 mt-1">
