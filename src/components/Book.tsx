@@ -2,11 +2,14 @@ import { Form, Field } from 'react-final-form'
 import { Books } from '../interfaces'
 import { validateBooks } from '../utils'
 import { GearSix } from '@phosphor-icons/react'
+import { useState } from 'react'
+import { Refs } from './Refs'
 
 export const Book = () => {
+  const [data, setData] = useState<Books | null>(null)
   
   const onSubmit = (values: Books) => {
-    console.log(values)
+    setData({...values})
   }
 
   return (
@@ -116,6 +119,9 @@ export const Book = () => {
             </form>
           )}
         />
+        {data && (
+          <Refs author={data.author} title={data.title} publisher={data.publisher} locale={data.locale} year={data.year} />
+        )}
       </div>
     </div>
   )
