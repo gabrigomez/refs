@@ -1,38 +1,8 @@
 import { Form, Field } from 'react-final-form'
 import { Books } from '../interfaces'
+import { validateBooks } from '../utils'
 
 export const Book = () => {
-  const validate = (values: Books) => {
-    const errors = {
-      author: false,
-      title: false,
-      publisher: false,
-      year: false,
-      locale: false,      
-    }
-    
-    if (!values.author) {
-      errors.author = true
-      return errors
-    }
-    if (!values.title) {
-      errors.title = true
-      return errors
-    }
-    if (!values.publisher) {
-      errors.publisher = true
-      return errors
-    }
-    if (!values.year) {
-      errors.year = true
-      return errors
-    }
-    if (!values.locale) {
-      errors.locale = true
-      return errors
-    }
-    
-  }
   
   const onSubmit = (values: Books) => {
     console.log(values)
@@ -46,7 +16,7 @@ export const Book = () => {
         </div>
         <Form
           onSubmit={onSubmit}
-          validate={validate}
+          validate={validateBooks}
           render={({ handleSubmit }) => (
             <form action="submit" onSubmit={handleSubmit}>
               <Field name="author">
