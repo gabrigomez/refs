@@ -1,5 +1,6 @@
 import { Field, Form } from "react-final-form"
 import { Articles } from "../interfaces"
+import { validateArticles } from "../utils"
 
 export const Article = () => {
   
@@ -15,16 +16,17 @@ export const Article = () => {
         </div>
         <Form
           onSubmit={onSubmit}
+          validate={validateArticles}
           render={({ handleSubmit }) => (
             <form action="submit" onSubmit={handleSubmit}>
-              <Field name="autor">
+              <Field name="author">
                 {({ input, meta }) => (
                   <div className="flex flex-col my-3">
                     <input 
                       type="text"
                       {...input} 
                       placeholder="Autor" 
-                      className="p-2 rounded-md"
+                      className={`p-2 rounded-md ${meta.error && meta.touched ? 'border-2 border-red-500' : ''}`}
                       />
                     {meta.error && meta.touched && 
                       <span className="text-xs text-red-600 mt-1">
@@ -34,14 +36,14 @@ export const Article = () => {
                   </div>
                 )}
               </Field>
-              <Field name="titulo">
+              <Field name="title">
                 {({ input, meta }) => (
                   <div className="flex flex-col my-3">
                     <input 
                       type="text"
                       {...input} 
                       placeholder="Título" 
-                      className="p-2 rounded-md"
+                      className={`p-2 rounded-md ${meta.error && meta.touched ? 'border-2 border-red-500' : ''}`}
                       />
                     {meta.error && meta.touched && 
                       <span className="text-xs text-red-600 mt-1">
@@ -51,14 +53,14 @@ export const Article = () => {
                   </div>
                 )}
               </Field>
-              <Field name="editora">
+              <Field name="publisher">
                 {({ input, meta }) => (
                   <div className="flex flex-col my-3">
                     <input 
                       type="text"
                       {...input} 
                       placeholder="Editora" 
-                      className="p-2 rounded-md"
+                      className={`p-2 rounded-md ${meta.error && meta.touched ? 'border-2 border-red-500' : ''}`}
                       />
                     {meta.error && meta.touched && 
                       <span className="text-xs text-red-600 mt-1">
@@ -68,14 +70,14 @@ export const Article = () => {
                   </div>
                 )}
               </Field>
-              <Field name="mes">
+              <Field name="mounth">
                 {({ input, meta }) => (
                   <div className="flex flex-col my-3">
                     <input 
                       type="text"
                       {...input} 
                       placeholder="Mês" 
-                      className="p-2 rounded-md"
+                      className={`p-2 rounded-md ${meta.error && meta.touched ? 'border-2 border-red-500' : ''}`}
                       />
                     {meta.error && meta.touched && 
                       <span className="text-xs text-red-600 mt-1">
@@ -85,14 +87,14 @@ export const Article = () => {
                   </div>
                 )}
               </Field>                
-              <Field name="ano">
+              <Field name="year">
                 {({ input, meta }) => (
                   <div className="flex flex-col my-3">
                     <input 
                       type="text"
                       {...input} 
                       placeholder="Ano" 
-                      className="p-2 rounded-md"
+                      className={`p-2 rounded-md ${meta.error && meta.touched ? 'border-2 border-red-500' : ''}`}
                       />
                     {meta.error && meta.touched && 
                       <span className="text-xs text-red-600 mt-1">
@@ -102,14 +104,14 @@ export const Article = () => {
                   </div>
                 )}
               </Field>
-              <Field name="fascilculo">
+              <Field name="fascicle">
                 {({ input, meta }) => (
                   <div className="flex flex-col my-3">
                     <input 
                       type="text"
                       {...input} 
                       placeholder="N° do Fascículo" 
-                      className="p-2 rounded-md"
+                      className={`p-2 rounded-md ${meta.error && meta.touched ? 'border-2 border-red-500' : ''}`}
                       />
                     {meta.error && meta.touched && 
                       <span className="text-xs text-red-600 mt-1">
@@ -126,7 +128,7 @@ export const Article = () => {
                       type="text"
                       {...input} 
                       placeholder="N° do Volume" 
-                      className="p-2 rounded-md"
+                      className={`p-2 rounded-md ${meta.error && meta.touched ? 'border-2 border-red-500' : ''}`}
                       />
                     {meta.error && meta.touched && 
                       <span className="text-xs text-red-600 mt-1">
@@ -136,14 +138,14 @@ export const Article = () => {
                   </div>
                 )}
               </Field>
-              <Field name="paginaInicial">
+              <Field name="initialPage">
                 {({ input, meta }) => (
                   <div className="flex flex-col my-3">
                     <input 
                       type="text"
                       {...input} 
                       placeholder="Página Inicial" 
-                      className="p-2 rounded-md"
+                      className={`p-2 rounded-md ${meta.error && meta.touched ? 'border-2 border-red-500' : ''}`}
                       />
                     {meta.error && meta.touched && 
                       <span className="text-xs text-red-600 mt-1">
@@ -153,14 +155,14 @@ export const Article = () => {
                   </div>
                 )}
               </Field>
-              <Field name="paginaFinal">
+              <Field name="finalPage">
                 {({ input, meta }) => (
                   <div className="flex flex-col my-3">
                     <input 
                       type="text"
                       {...input} 
                       placeholder="Página Final" 
-                      className="p-2 rounded-md"
+                      className={`p-2 rounded-md ${meta.error && meta.touched ? 'border-2 border-red-500' : ''}`}
                       />
                     {meta.error && meta.touched && 
                       <span className="text-xs text-red-600 mt-1">
@@ -170,14 +172,14 @@ export const Article = () => {
                   </div>
                 )}
               </Field>                     
-              <Field name="local">
+              <Field name="locale">
                 {({ input, meta }) => (
                   <div className="flex flex-col my-3">
                     <input 
                       type="text"
                       {...input} 
                       placeholder="Local" 
-                      className="p-2 rounded-md"
+                      className={`p-2 rounded-md ${meta.error && meta.touched ? 'border-2 border-red-500' : ''}`}
                       />
                     {meta.error && meta.touched && 
                       <span className="text-xs text-red-600 mt-1">
