@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Book } from "./Book"
-import { Book as BookIcon, Article as ArticleIcon } from "@phosphor-icons/react"
+import { Books as BookIcon, Article as ArticleIcon } from "@phosphor-icons/react"
 import { Article } from "./Article"
 
 export const Home = () => {
@@ -20,16 +20,16 @@ export const Home = () => {
           </p>
         </div>
         <div className="flex items-center justify-evenly">
-          <button className="flex flex-col justify-center items-center hover:text-gray-700 duration-300" onClick={changeMode}>
+          <button className="flex flex-col justify-center items-center hover:text-slate-400 duration-300" onClick={changeMode}>
             <BookIcon className="text-3xl" />
             <p className="text-sm">
-              Book
+              Livros
             </p>
           </button>
-          <button className="flex flex-col justify-center items-center hover:text-gray-700 duration-300" onClick={changeMode}>
+          <button className="flex flex-col justify-center items-center hover:text-sky-700 duration-300" onClick={changeMode}>
             <ArticleIcon className="text-3xl" />
             <p className="text-sm">
-              Article
+              Artigos
             </p>
           </button>
         </div>

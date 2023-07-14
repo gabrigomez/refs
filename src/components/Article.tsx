@@ -1,6 +1,7 @@
 import { Field, Form } from "react-final-form"
 import { Articles } from "../interfaces"
 import { validateArticles } from "../utils"
+import { GearSix } from "@phosphor-icons/react"
 
 export const Article = () => {
   
@@ -12,16 +13,18 @@ export const Article = () => {
     <div className="bg-sky-700 rounded-md">
       <div className='flex flex-col jus items-center'>
         <div className='mt-2'>
-          <p>Article</p>
+          <p className="font-title font-semibold text-3xl">
+            ARTIGO
+          </p>
         </div>
         <Form
           onSubmit={onSubmit}
           validate={validateArticles}
           render={({ handleSubmit }) => (
-            <form action="submit" onSubmit={handleSubmit}>
+            <form className="flex flex-col" action="submit" onSubmit={handleSubmit}>
               <Field name="author">
                 {({ input, meta }) => (
-                  <div className="flex flex-col my-3">
+                  <div className="flex flex-col my-2">
                     <input 
                       type="text"
                       {...input} 
@@ -38,7 +41,7 @@ export const Article = () => {
               </Field>
               <Field name="title">
                 {({ input, meta }) => (
-                  <div className="flex flex-col my-3">
+                  <div className="flex flex-col my-2">
                     <input 
                       type="text"
                       {...input} 
@@ -55,7 +58,7 @@ export const Article = () => {
               </Field>
               <Field name="publisher">
                 {({ input, meta }) => (
-                  <div className="flex flex-col my-3">
+                  <div className="flex flex-col my-2">
                     <input 
                       type="text"
                       {...input} 
@@ -72,7 +75,7 @@ export const Article = () => {
               </Field>
               <Field name="mounth">
                 {({ input, meta }) => (
-                  <div className="flex flex-col my-3">
+                  <div className="flex flex-col my-2">
                     <input 
                       type="text"
                       {...input} 
@@ -89,7 +92,7 @@ export const Article = () => {
               </Field>                
               <Field name="year">
                 {({ input, meta }) => (
-                  <div className="flex flex-col my-3">
+                  <div className="flex flex-col my-2">
                     <input 
                       type="text"
                       {...input} 
@@ -106,7 +109,7 @@ export const Article = () => {
               </Field>
               <Field name="fascicle">
                 {({ input, meta }) => (
-                  <div className="flex flex-col my-3">
+                  <div className="flex flex-col my-2">
                     <input 
                       type="text"
                       {...input} 
@@ -123,7 +126,7 @@ export const Article = () => {
               </Field>
               <Field name="volume">
                 {({ input, meta }) => (
-                  <div className="flex flex-col my-3">
+                  <div className="flex flex-col my-2">
                     <input 
                       type="text"
                       {...input} 
@@ -140,7 +143,7 @@ export const Article = () => {
               </Field>
               <Field name="initialPage">
                 {({ input, meta }) => (
-                  <div className="flex flex-col my-3">
+                  <div className="flex flex-col my-2">
                     <input 
                       type="text"
                       {...input} 
@@ -157,7 +160,7 @@ export const Article = () => {
               </Field>
               <Field name="finalPage">
                 {({ input, meta }) => (
-                  <div className="flex flex-col my-3">
+                  <div className="flex flex-col my-2">
                     <input 
                       type="text"
                       {...input} 
@@ -174,7 +177,7 @@ export const Article = () => {
               </Field>                     
               <Field name="locale">
                 {({ input, meta }) => (
-                  <div className="flex flex-col my-3">
+                  <div className="flex flex-col my-2">
                     <input 
                       type="text"
                       {...input} 
@@ -189,8 +192,11 @@ export const Article = () => {
                   </div>
                 )}
               </Field>
-              <button className='mb-4 p-2 rounded-md hover:bg-gray-800 duration-200'>
-                Gerar!
+              <button className='flex items-center self-center my-4 p-2 rounded-md border border-sky-500 hover:bg-sky-900 duration-200 group'>
+                <GearSix className='text-md mr-1 group-hover:animate-spin' />
+                <p className='font-semibold'>
+                  Gerar
+                </p>
               </button>
             </form>
           )}

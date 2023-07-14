@@ -1,6 +1,7 @@
 import { Form, Field } from 'react-final-form'
 import { Books } from '../interfaces'
 import { validateBooks } from '../utils'
+import { GearSix } from '@phosphor-icons/react'
 
 export const Book = () => {
   
@@ -12,16 +13,18 @@ export const Book = () => {
     <div className="bg-slate-400 rounded-md">
       <div className='flex flex-col jus items-center'>
         <div className='mt-2'>
-          <p>Book</p>
+          <p className="font-title font-semibold text-3xl">
+            LIVRO
+          </p>
         </div>
         <Form
           onSubmit={onSubmit}
           validate={validateBooks}
           render={({ handleSubmit }) => (
-            <form action="submit" onSubmit={handleSubmit}>
+            <form className='flex flex-col' action="submit" onSubmit={handleSubmit}>
               <Field name="author">
                 {({ input, meta }) => (
-                  <div className="flex flex-col my-3">
+                  <div className="flex flex-col my-2">
                     <input 
                       type="text"
                       {...input} 
@@ -38,7 +41,7 @@ export const Book = () => {
               </Field>
               <Field name="title">
                 {({ input, meta }) => (
-                  <div className="flex flex-col my-3">
+                  <div className="flex flex-col my-2">
                     <input 
                       type="text"
                       {...input} 
@@ -55,7 +58,7 @@ export const Book = () => {
               </Field>
               <Field name="publisher">
                 {({ input, meta }) => (
-                  <div className="flex flex-col my-3">
+                  <div className="flex flex-col my-2">
                     <input 
                       type="text"
                       {...input} 
@@ -72,7 +75,7 @@ export const Book = () => {
               </Field>              
               <Field name="year">
                 {({ input, meta }) => (
-                  <div className="flex flex-col my-3">
+                  <div className="flex flex-col my-2">
                     <input 
                       type="text"
                       {...input} 
@@ -89,7 +92,7 @@ export const Book = () => {
               </Field>              
               <Field name="locale">
                 {({ input, meta }) => (
-                  <div className="flex flex-col my-3">
+                  <div className="flex flex-col my-2">
                     <input 
                       type="text"
                       {...input} 
@@ -104,8 +107,11 @@ export const Book = () => {
                   </div>
                 )}
               </Field>
-              <button className='mb-4 p-2 rounded-md hover:bg-gray-800 duration-200'>
-                Gerar!
+              <button className='flex items-center self-center my-4 p-2 rounded-md border border-slate-600 hover:bg-slate-500 duration-200 group'>
+                <GearSix className='text-md mr-1 group-hover:animate-spin' />
+                <p className='font-semibold'>
+                  Gerar
+                </p>
               </button>
             </form>
           )}
