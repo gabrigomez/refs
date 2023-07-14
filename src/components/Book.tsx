@@ -1,14 +1,14 @@
 import { Form, Field } from 'react-final-form'
-import { Books } from '../interfaces'
+import { Work } from '../interfaces'
 import { validateBooks } from '../utils'
 import { GearSix } from '@phosphor-icons/react'
 import { useState } from 'react'
 import { Refs } from './Refs'
 
 export const Book = () => {
-  const [data, setData] = useState<Books | null>(null)
+  const [data, setData] = useState<Work | null>(null)
   
-  const onSubmit = (values: Books) => {
+  const onSubmit = (values: Work) => {
     setData({...values})
   }
 

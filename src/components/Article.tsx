@@ -1,14 +1,14 @@
 import { Field, Form } from "react-final-form"
-import { Articles } from "../interfaces"
+import { Work } from "../interfaces"
 import { validateArticles } from "../utils"
 import { GearSix } from "@phosphor-icons/react"
 import { useState } from "react"
 import { Refs } from "./Refs"
 
 export const Article = () => {
-  const [data, setData] = useState<Articles | null>(null)
+  const [data, setData] = useState<Work | null>(null)
   
-  const onSubmit = (values: Articles) => {
+  const onSubmit = (values: Work) => {
     setData({...values})
   }
 

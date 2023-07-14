@@ -1,13 +1,11 @@
 import { FC } from "react"
-import { Articles } from "../interfaces"
+import { Work } from "../interfaces"
 
-export const Refs: FC<Articles> = ({...props}) => {
+export const Refs: FC<Work> = ({...props}) => {
   const author = (props.author).split(' ')
   const firstName = (author[author.length -1]).toUpperCase()
   const lastName = author[0]
   
-  console.log(props.className)
-
   return (
     <div className={`w-full flex flex-col ${props.className ? props.className : 'text-black'}`}>
       <div>
@@ -56,7 +54,7 @@ export const Refs: FC<Articles> = ({...props}) => {
           )}
           {props.mounth && (
             <p className="mr-1">
-              {props.mounth}
+              {props.mounth}.
             </p>
           )}
           <p className="mr-1">

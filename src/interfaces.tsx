@@ -1,12 +1,4 @@
-export interface Books {
-  author: string,
-  title: string,
-  publisher: string,
-  year: string,
-  locale: string,
-}
-
-export interface Articles {
+export interface Work {
   className?: string
   author: string,
   title: string,
