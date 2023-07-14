@@ -120,7 +120,7 @@ export const Book = () => {
           )}
         />
         {data && (
-          <Refs author={data.author} title={data.title} publisher={data.publisher} locale={data.locale} year={data.year} />
+          <Refs {...data} />
         )}
       </div>
     </div>

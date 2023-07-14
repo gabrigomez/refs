@@ -1,7 +1,7 @@
 import { FC } from "react"
-import { Books } from "../interfaces"
+import { Articles } from "../interfaces"
 
-export const Refs: FC<Books> = ({...props}) => {
+export const Refs: FC<Articles> = ({...props}) => {
   const author = (props.author).split(' ')
   const firstName = (author[author.length -1]).toUpperCase()
   const lastName = author[0]
@@ -22,7 +22,7 @@ export const Refs: FC<Books> = ({...props}) => {
             {lastName}.
           </p>       
           <p className="font-bold mr-1">
-            {props.title},
+            {props.title}.
           </p>     
         </div>
         <div className="flex">
@@ -32,6 +32,31 @@ export const Refs: FC<Books> = ({...props}) => {
           <p className="mr-1">
             {props.locale},
           </p>
+          {props.volume && (
+            <p className="mr-1">
+              v. {props.volume},
+            </p>
+          )}
+          {props.volume && (
+            <p className="mr-1">
+              n. {props.fascicle},
+            </p>
+          )}
+          {props.initialPage && (
+            <p className="mr-1">
+              p. {props.initialPage}-
+            </p>
+          )}
+          {props.finalPage && (
+            <p className="mr-1">
+              {props.finalPage},
+            </p>
+          )}
+          {props.mounth && (
+            <p className="mr-1">
+              {props.mounth}
+            </p>
+          )}
           <p className="mr-1">
             {props.year}.
           </p>

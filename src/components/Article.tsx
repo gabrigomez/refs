@@ -2,11 +2,14 @@ import { Field, Form } from "react-final-form"
 import { Articles } from "../interfaces"
 import { validateArticles } from "../utils"
 import { GearSix } from "@phosphor-icons/react"
+import { useState } from "react"
+import { Refs } from "./Refs"
 
 export const Article = () => {
+  const [data, setData] = useState<Articles | null>(null)
   
   const onSubmit = (values: Articles) => {
-    console.log(values)
+    setData({...values})
   }
 
   return (
@@ -62,7 +65,7 @@ export const Article = () => {
                     <input 
                       type="text"
                       {...input} 
-                      placeholder="Editora" 
+                      placeholder="Revista" 
                       className={`p-2 rounded-md ${meta.error && meta.touched ? 'border-2 border-red-500' : ''}`}
                       />
                     {meta.error && meta.touched && 
@@ -201,6 +204,9 @@ export const Article = () => {
             </form>
           )}
         />
+        {data && (
+          <Refs {...data} />
+        )}
       </div>
     </div>
   )
