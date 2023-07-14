@@ -205,7 +205,7 @@ export const Article = () => {
           )}
         />
         {data && (
-          <Refs {...data} />
+          <Refs {...data} className="text-white"/>
         )}
       </div>
     </div>

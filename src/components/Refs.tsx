@@ -5,15 +5,17 @@ export const Refs: FC<Articles> = ({...props}) => {
   const author = (props.author).split(' ')
   const firstName = (author[author.length -1]).toUpperCase()
   const lastName = author[0]
+  
+  console.log(props.className)
 
   return (
-    <div className="w-full flex flex-col">
+    <div className={`w-full flex flex-col ${props.className ? props.className : 'text-black'}`}>
       <div>
         <p className="font-semibold">
           REFERÊNCIA
         </p>
       </div>
-      <div className="flex flex-col justify-center items-center sm:flex-row text-black">
+      <div className="flex flex-col justify-center items-center sm:flex-row">
         <div className="flex">
           <p className="mr-1">
             {firstName}, 

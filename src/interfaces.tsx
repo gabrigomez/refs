@@ -7,6 +7,7 @@ export interface Books {
 }
 
 export interface Articles {
+  className?: string
   author: string,
   title: string,
   publisher: string,
